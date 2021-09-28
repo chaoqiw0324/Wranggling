@@ -95,7 +95,7 @@ rename(litters_df2,GROUP = group)
 relocate(litters_df2,)
 ```
 
-## filter
+## `filter`
 let's get rid of rows
 ```{r}
 filter(litters_df2,gd_of_birth == 20)
@@ -112,5 +112,20 @@ filter(litters_df2,group == "Con7"| gd_of_birth ==20)
 drop_na
 
 ```
+
+## `mutate`
+Let's add or change columns
+```{r}
+## add a new columb by two existing columns
+## str_to_lower change the upper to lower
+mutate(litters_df2,weight_change = gd18_weight - gd0_weight,group = str_to_lower(group))
+```
+
+## `arrange`
+```{r}
+arrange(litters_df2,gd_of_birth,gd0_weight)
+```
+
+
 
 
